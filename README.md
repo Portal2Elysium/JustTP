@@ -1,2 +1,2 @@
-# essentialsTP
-EssentialsTP by ServerKart_Rod
+# JustTP
+A cleaned up fork of EssentialsTP by ServerKart_Rod

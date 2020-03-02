@@ -15,7 +15,7 @@ use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
 
-class essentialsTP extends PluginBase{
+class JustTP extends PluginBase{
     /** @var \SQLite3 */
     private $db2;
     /** @var string */
@@ -55,7 +55,7 @@ class essentialsTP extends PluginBase{
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
         switch($cmd->getName()){
             case 'tpa':
-                if(!$sender->hasPermission("essentialstp.command.tpa")){
+                if(!$sender->hasPermission("justtp.command.tpa")){
                     $sender->sendMessage(TextFormat::RED . $this->config->get("Lang_no_permissions"));
 
                     return true;
@@ -101,7 +101,7 @@ class essentialsTP extends PluginBase{
                 }
                 break;
             case 'tpahere':
-                if(!$sender->hasPermission("essentialstp.command.tpahere")){
+                if(!$sender->hasPermission("justtp.command.tpahere")){
                     $sender->sendMessage(TextFormat::RED . $this->config->get("Lang_no_permissions"));
 
                     return true;
@@ -146,7 +146,7 @@ class essentialsTP extends PluginBase{
                 }
                 break;
             case 'tpaccept':
-                if(!$sender->hasPermission("essentialstp.command.tpaccept")){
+                if(!$sender->hasPermission("justtp.command.tpaccept")){
                     $sender->sendMessage(TextFormat::RED . $this->config->get("Lang_no_permissions"));
 
                     return true;
@@ -207,7 +207,7 @@ class essentialsTP extends PluginBase{
                 }
                 break;
             case 'tpdeny':
-                if(!$sender->hasPermission("essentialstp.command.tpdeny")){
+                if(!$sender->hasPermission("justtp.command.tpdeny")){
                     $sender->sendMessage(TextFormat::RED . $this->config->get("Lang_no_permissions"));
 
                     return true;
@@ -246,7 +246,7 @@ class essentialsTP extends PluginBase{
                       time TEXT,
                       status TEXT)");
             $this->result = $this->prepare->execute();
-            $this->getLogger()->info(TextFormat::AQUA . "essentialsTP+ request database created!");
+            $this->getLogger()->info(TextFormat::AQUA . "p2e+ request database created!");
         }
         $this->prepare = $this->db2->prepare("SELECT * FROM sqlite_master WHERE type='table' AND name='cooldowns'");
         $this->result = $this->prepare->execute();
@@ -261,7 +261,7 @@ class essentialsTP extends PluginBase{
                       player TEXT
                       )");
             $this->result = $this->prepare->execute();
-            $this->getLogger()->info(TextFormat::AQUA . "essentialsTP+ cooldown database created!");
+            $this->getLogger()->info(TextFormat::AQUA . "p2e+ cooldown database created!");
         }
 
     }
@@ -296,7 +296,7 @@ class essentialsTP extends PluginBase{
     }
 
     public function onEnable(){
-        $this->getLogger()->info(TextFormat::GREEN . "essentialsTP+ loading...");
+        $this->getLogger()->info(TextFormat::GREEN . "p2e+ loading...");
         @mkdir($this->getDataFolder());
         $this->check_config();
         try{
@@ -315,13 +315,13 @@ class essentialsTP extends PluginBase{
         $this->getLogger()->info(TextFormat::GREEN . "[INFO] loading [" . TextFormat::GOLD . "config.yml" . TextFormat::GREEN . "]....");
         $this->tpa_cooldown = time() - $this->config->get("tpa-here-cooldown");
         $this->getLogger()->info(TextFormat::GREEN . "[INFO] loading [" . TextFormat::GOLD . "config.yml" . TextFormat::GREEN . "] DONE");
-        $this->getLogger()->info(TextFormat::GREEN . "essentialsTP+ loaded!");
+        $this->getLogger()->info(TextFormat::GREEN . "p2e+ loaded!");
     }
 
     public function onDisable(){
         if($this->prepare){
             $this->prepare->close();
         }
-        $this->getLogger()->info("essentialsTP+ Disabled");
+        $this->getLogger()->info("p2e+ Disabled");
     }
 }

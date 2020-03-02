@@ -1,5 +1,5 @@
-name: essentialsTP
-main: essentialsTP\essentialsTP
+name: JustTP
+main: p2e\JustTP\JustTP
 version: 1.2.3
 api: [3.0.0]
 extensions: [sqlite3]
@@ -7,37 +7,37 @@ commands:
  tpa:
   description: Send teleport request to player to teleport you to player.
   usage: "/tpa <player>"
-  permission: essentialstp.command.tpa
+  permission: justtp.command.tpa
  tpahere:
   description: Send teleport request to teleport player to you.
   usage: "/tpahere <player>"
-  permission: essentialstp.command.tpahere
+  permission: justtp.command.tpahere
  tpaccept:
   description: Accept a teleport request.
   usage: "/tpaccept"
-  permission: essentialstp.command.tpaccept
+  permission: justtp.command.tpaccept
  tpdeny:
    description: decline all active teleport requests.
    usage: "/tpdeny"
-   permission: essentialstp.command.tpdeny
+   permission: justtp.command.tpdeny
 permissions:
- essentialstp.*:
+ justtp.*:
   default: op
-  description: "Allows all essentialsTP commands"
+  description: "Allows all p2e commands"
   children:
-   essentialstp.command.*:
+   justtp.command.*:
     description: "Allows player to use commands"
     default: op
     children:
-     essentialstp.command.tpdeny:
+     justtp.command.tpdeny:
       description: "Allows player to decline request"
       default: true
-     essentialstp.command.tpaccept:
+     justtp.command.tpaccept:
       description: "Allows player to accept request"
       default: true
-     essentialstp.command.tpahere:
+     justtp.command.tpahere:
       description: "Allows player to teleport player to them"
       default: true
-     essentialstp.command.tpa:
+     justtp.command.tpa:
       description: "Allows player to teleport to another player"
       default: true

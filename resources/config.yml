@@ -1,13 +1,13 @@
 ---
-plugin-name: essentalsTp+
-sqlite-dbname: essentials_tp
+plugin-name: JustTP
+sqlite-dbname: just_tp
 tpa-here-cooldown: "30"
 tp-home-cooldown: "5"
 tp-warp-cooldown: "5"
 tp-spawn-cooldown: "5"
 Lang_invalid_usage: 'INVALID USAGE:'
 Lang_command_only_use_ingame: This command can only be used in the game.
-Lang_no_permissions: '[EssentialsTP] No permission.'
+Lang_no_permissions: '[JustTP] No permission.'
 Lang_teleport_home: Teleported you home.
 Lang_teleport_spawn: Teleported you to spawn.
 Lang_teleport_wild: Teleported you some where wild.
