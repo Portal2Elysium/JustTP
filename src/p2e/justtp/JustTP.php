@@ -5,7 +5,7 @@
  * skype: advocaite
  */
 
-namespace essentialsTP;
+namespace p2e\justtp;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
