@@ -269,11 +269,11 @@ class JustTP extends PluginBase{
     public function check_config(){
         $this->saveDefaultConfig();
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, []);
-        $this->config->set('plugin-name', "essentalsTp+");
+        $this->config->set('plugin-name', "JustTp");
         $this->config->save();
 
         if(!$this->config->get("sqlite-dbname")){
-            $this->config->set("sqlite-dbname", "essentials_tp");
+            $this->config->set("sqlite-dbname", "just_tp");
             $this->config->save();
         }
 
